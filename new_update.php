@@ -1,30 +1,4 @@
 
-<?php 
-session_start();
-include_once 'dbconnect.php';
-
-$query = $DBcon->query("SELECT * FROM user WHERE user_id =".$_SESSION['userSession']);
-$userRow=$query->fetch_array();
-/*
-$user_id = $_SESSION["userSession3"] ;
-$query = $DBcon->query("SELECT * FROM user WHERE user_id =".$user_id);
-$row=$query->fetch_array();*/
-
-
-$id=$_POST['userId'];
-		print_r($id);
-
-$se="SELECT * FROM user WHERE user_id = $id";
-$quer=mysqli_query($DBcon,$se);
-$we=mysqli_fetch_array($quer);
-
-
-$DBcon->close();
-
-?>
-
-
-
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -95,28 +69,76 @@ $DBcon->close();
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     
+                     <h2>Update User</h2>  
 
-                     <form  method="post" action="">
+                     <?php 
+session_start();
+require_once 'dbconnect.php';
 
-<header>
-<h3>Admin</h3> 
-<h2><center>Delete user</center></h2>
-</header>          
-        
-<?php echo "User ID    :". $we['user_id']."</br>"; ?>
-<?php echo "User Name  : ". $we['first_name']."&nbsp ".$we['last_name']."</br>"; ?>
-<?php echo "Position   :". $we['position']; ?>
+if(!isset($_SESSION['userSession'])) {
+include_once("logout.php");
+exit;
+}
+		$id=$_POST['userId'];
+		//print_r($id);
 
-<footer>
+$se="SELECT * FROM user WHERE user_id = $id";
+$quer=mysqli_query($DBcon,$se);
+$we=mysqli_fetch_array($quer);
 
-<center>        
-<input type="button" class="btn btn-danger" value="Yes" accesskey="y" onclick="window.location.href='del_user.php?user_id=<?php echo $we["user_id"]; ?>'" />
-         
-<input type="button" class="btn btn-primary" value="Cancel" accesskey="c" onclick="window.location.href='user_details.php?back'" />       
-</center>
-</footer>
-</form>   
+?>
+<form method="post" >
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">First Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="First Name" name="name" value="<?php echo $we['first_name']; ?>">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Last Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Last Name" name="name1" value="<?php echo $we['last_name']; ?>">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">E mail</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="e mail" name="email" value="<?php echo $we['email']; ?>">
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Phone Number</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Phone Number" name="position" value="<?php echo $we['phone_num']; ?>">
+  </div>
+
+
+<b>Position:</b>
+<br>
+<input type="radio" class="txtField"  name="position" value="admin" value="<?php echo $we['position']; ?>" >  Admin<br>
+<input type="radio" class="txtField"  name="position" value="user" value="<?php echo $we['position']; ?>" > User<br>
+<input type="hidden" name="userId" value="<?php echo $id; ?>">
+
+<input type="submit" class="btn btn-primary" name="update" value="Update">
+<button type="button" class="btn btn-danger value="Cancel" onclick="window.location.href='user_details.php?back'" />Cancel</button>
+
+</form>
+
+<?php 
+if (isset($_POST['update'])) {
+	$Fname=$_POST['name'];
+	$Lname=$_POST['name1'];
+	$email=$_POST['email'];
+	$phone_num=$_POST['phone'];
+	$position=$_POST['position'];
+	$id=$_POST['userId'];
+
+	$inq="UPDATE user set first_name='$Fname' , last_name='$Lname', email='$email', phone_num='$phone_num', position='$position' WHERE user_id='$id'";
+	$updquery=mysqli_query($DBcon,$inq);
+	 if ($updquery) {
+	 	echo "Updated Success";
+	 }else{
+	 	echo "Can not update";
+	 }
+}
+?> 
                     </div>
                 </div>              
                  <!-- /. ROW  -->
@@ -151,9 +173,6 @@ $DBcon->close();
    
 </body>
 </html>
-
-
-
 
 
 
