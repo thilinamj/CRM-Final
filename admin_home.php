@@ -64,20 +64,20 @@ $DBcon->close();
 
 
                     <li class="active-link">
-                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                        <a href="admin_home.php" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                     </li>
                    
 
                     <li>
-                        <a href="add_user.php"><i class="fa fa-table "></i>Add User  <span class="badge">Add User</span></a>
+                        <a href="add_user.php"><i class="fa fa-table "></i>Add Staff  <span class="badge">Add Staff</span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>User Details  <span class="badge">User Details</span></a>
+                        <a href="user_details.php"><i class="fa fa-edit "></i>Staff Details  <span class="badge">Staff Details</span></a>
                     </li>
 
 
                     <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>View Customer</a>
+                        <a href="admin_customer_panel.php"><i class="fa fa-qrcode "></i>View Customer</a>
                     </li>
                     
 
@@ -107,7 +107,7 @@ $DBcon->close();
                  
                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="receive.php" >
  <i class="fa fa-envelope-o fa-5x"></i>
                       <h4>Mail Box</h4>
                       </a>
@@ -117,29 +117,9 @@ $DBcon->close();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
- <i class="fa fa-envelope-o fa-5x"></i>
-                      <h4>Send Mail</h4>
-                      </a>
-                      </div>
-                     
-                     
-                  </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                      <div class="div-square">
-                           <a href="blank.html" >
- <i class="fa fa-users fa-5x"></i>
-                      <h4>See Users</h4>
-                      </a>
-                      </div>
-                     
-                     
-                  </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                      <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="add_user.php" >
  <i class="fa fa-user fa-5x"></i>
-                      <h4>Add User</h4>
+                      <h4>Add Staff</h4>
                       </a>
                       </div>
                      
@@ -147,9 +127,29 @@ $DBcon->close();
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.html" >
+                           <a href="user_details.php" >
+ <i class="fa fa-users fa-5x"></i>
+                      <h4>See Staff</h4>
+                      </a>
+                      </div>
+                     
+                     
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                      <div class="div-square">
+                           <a href="" >
+ <i class="fa fa-user fa-5x"></i>
+                      <h4>Assign Customer</h4>
+                      </a>
+                      </div>
+                     
+                     
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                      <div class="div-square">
+                           <a href="admin_customer_panel.php" >
  <i class="fa fa-comments-o fa-5x"></i>
-                      <h4>Customers</h4>
+                      <h4> See Customers</h4>
                       </a>
                       </div>
                      

@@ -109,21 +109,22 @@ $DBcon->close();
                  
 
  <li class="active-link">
-                        <a href="admin_home.php" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                       <a href="admin_home.php" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                     </li>
                    
 
                     <li>
-                        <a href="#"><i class="fa fa-table "></i>Add User  <span class="badge">Add Staff</span></a>
+                        <a href="add_user.php"><i class="fa fa-table "></i>Add Staff  <span class="badge">Add Staff</span></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>User Details  <span class="badge">Staff Details</span></a>
+                        <a href="user_details.php"><i class="fa fa-edit "></i>Staff Details  <span class="badge">Staff Details</span></a>
                     </li>
 
 
                     <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>View Customer</a>
+                        <a href="admin_customer_panel.php"><i class="fa fa-qrcode "></i>View Customer</a>
                     </li>
+                    
 
         </nav>
         <!-- /. NAV SIDE  -->
